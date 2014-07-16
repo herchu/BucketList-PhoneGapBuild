@@ -1,6 +1,6 @@
 angular.module('bucketList.services', [])
     .factory('API', function ($rootScope, $http, $ionicLoading, $window) {
-       var base = "http://topcoder-hybrid.mybluemix.com";
+       var base = "http://topcoder-hybrid.mybluemix.net";
         $rootScope.show = function (text) {
             $rootScope.loading = $ionicLoading.show({
                 content: text ? text : 'Loading',
@@ -61,7 +61,7 @@ angular.module('bucketList.services', [])
                     params: {
                         token: email
                     }
-                });
+                );
             },
             getOne: function (id, email) {
                 return $http.get(base+'/api/v1/bucketList/data/list/' + id, {
